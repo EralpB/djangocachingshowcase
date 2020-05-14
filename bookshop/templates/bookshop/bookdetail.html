@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Detail</title>
+</head>
+<body>
+<h2>{{ book.title }} by {{ book.author.name }}</h2>
+
+<p>details about the book ..</p>
+
+<h3>See popular books from this author</h3>
+<ul>
+    {% for book in authors_top_books %}
+        <li><a href="{% url 'bookdetail' book.id %}">{{ book.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/">Go back to homepage</a>
+<p><small>it took {{ elapsedtime }} seconds to serve this page</small></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Shop!</title>
+</head>
+<body>
+
+<h2>Authors</h2>
+<ul>
+    {% for author in authors %}
+        <li><a href="{% url 'authordetail' author.id %}">{{ author.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Books</h2>
+<ul>
+    {% for book in books %}
+        <li><a href="{% url 'bookdetail' book.id %}">{{ book.title }}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
