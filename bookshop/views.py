@@ -22,8 +22,8 @@ def author_detail_view(request, pk):
 
 
 def index_view(request):
-    authors = Author.objects.all()
-    books = Book.objects.all()
+    authors = Author.objects.all()[:50]
+    books = Book.objects.all()[:50]
     return render(request, 'bookshop/index.html', {
         'books': books,
         'authors': authors
